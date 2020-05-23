@@ -90,7 +90,7 @@ And then you will have a terminal view similar to this:
 # m h  dom mon dow   command 
 ```
 
-Now add add your configured script to crontab
+Now add your configured script to the bottom line of crontab
 
 ``` sh
 # Edit this file to introduce tasks to be run by cron.
@@ -199,7 +199,6 @@ Now add add your configured script to crontab
 
 # * * * * * root /usr/bin/sh /home_to_file/namefile.sh
 
-# * * * * * root /usr/bin/sh /home_to_file/namefile.sh
 ```
 
 All ready. Now your script is once every minute. If you want to change the frequency, consult the crontab [documentation](https://crontab.guru/)
