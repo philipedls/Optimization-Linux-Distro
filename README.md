@@ -32,7 +32,7 @@ Or
 Understanding all the commands above and especially the risk of using the third command, I created the following ShellScript file:
 
 ``` sh
-!/bin/bash
+#!/bin/bash
 sync; echo 3 > /proc/sys/vm/drop_caches 
 ``` 
 
@@ -178,18 +178,67 @@ Now add add your configured script to crontab
 
 # 
 
+# m h  dom mon dow   commandbs (including errors) is sent through
+
+# email to the user the crontab file belongs to (unless redirected).
+# 
+
+# For example, you can run a backup of all your user accounts
+
+# at 5 a.m every week with:
+
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+
+# 
+
+# For more information see the manual pages of crontab(5) and cron(8)
+
+# 
+
 # m h  dom mon dow   command
+
+# * * * * * root /usr/bin/sh /home_to_file/namefile.sh
 
 # * * * * * root /usr/bin/sh /home_to_file/namefile.sh
 ```
 
 All ready. Now your script is once every minute. If you want to change the frequency, consult the crontab [documentation](https://crontab.guru/)
 
+#### If you have problems configuring or running crontab use this recommendation
+
+Open the terminal and use your favorite text editor (I'll use nano as an example again)
+
+`nano ~/clean_cache.sh` 
+
+And inside the file copy and paste the following command
+
+``` sh
+#!/bin/bash
+while [ 1 ];
+do
+ clear
+ free -h && sync && echo 3 > /proc/sys/vm/drop_caches && free -h
+ sleep 70
+done 
+```
+
+Sleep is associated with seconds, meaning that this algorithm is configured for the script to run every 70 seconds.
+
+Finally save the file press Crl + O.
+
+To leave the environment of the nano editor press Crl + X
+
+To run the script use this command:
+
+`/.clean_cache.sh` or `sudo /.clean_cache.sh` 
+
 ### 2: Improving Swap Management
 
 #### Changing the swappiness amount
 
-Swapiness is a value from 0 to 100 that controls the degree to which the system changes. A high value gives priority to system performance, aggressively changing processes out of physical memory when they are not active. A low value gives priority to the interaction and avoids alteration processes outside physical memory as long as possible, which decreases the response latency. The default value is 60.
+Swapiness is a value from 0 to 100 that controls the degree to which the system changes. A high value gives priority to system performance, aggressively changing processes out of physical memory when they are not active. 
+
+A low value gives priority to the interaction and avoids alteration processes outside physical memory as long as possible, which decreases the response latency. The default value is 60.
 In this case you need to change the /etc/sysctl.conf file, so that the change is permanent.
 
 My swapiness is configured as follows:
