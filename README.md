@@ -1,4 +1,4 @@
-# Optimization-Linux-Distro
+# Optimization Linux Distro by Philipe Luna
 this sequence of steps should work on any linux distributions based on debian or ubuntu
 
 ## tested distributions: Ubuntu, Xubuntu, Kubuntu, KDE Neon and Elementary OS
