@@ -275,7 +275,7 @@ This step is for those who have a considerable amount of cache and want to disab
 
 `sudo swapoff -a` 
 
-### Improving Processor Performance
+### 3: Improving Processor Performance
 
 Depending on your processor and with this method it may even be possible to control the clock and activate or deactivate the boots mode which increases the clock even more
 
@@ -290,7 +290,7 @@ The options the program will give varied depending on the capabilities of your p
 
 ![Alt](https://3.bp.blogspot.com/-5yM6AtRMkpY/UjjJfRXy-NI/AAAAAAAAIdw/ulqvH8GEiOk/s400/Menu_001.png)
 
-### 3: Disable "unnecessary" processes that start with the system
+### 4: Disable "unnecessary" processes that start with the system
 
 Like any operating system, Kubuntu or any other OS has several applications and services that start with the system.
 
