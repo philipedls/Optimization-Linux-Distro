@@ -1,7 +1,7 @@
 # Optimization-Linux-Distro
 this sequence of steps should work on any linux distributions based on debian or ubuntu
 
-## tested distributions: ubuntu, Xubuntu, Kubuntu, KDE Neon and Elementary OS
+## tested distributions: Ubuntu, Xubuntu, Kubuntu, KDE Neon and Elementary OS
 
 ### 1: Clearing RAM cache
 
